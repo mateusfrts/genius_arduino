@@ -62,8 +62,10 @@ int catch_single_button_press(){
         if(bot_vm_press){
           while(1){
             Serial.println("botvm pressionado");
+            digitalWrite(ledvm, HIGH); //para o led acender quando o botvm for pressionado
             if(!bot_vm_press){
               Serial.println("botvm solto");
+              digitalWrite(ledvm, LOW);
               flag1=1;
               break;
             }
@@ -72,9 +74,11 @@ int catch_single_button_press(){
       
       if(bot_am_press){
         while(1){
-          Serial.println("bot2 pressionado");
+          Serial.println("botam pressionado");
+          digitalWrite(ledam, HIGH);
           if(!bot_am_press){
-            Serial.println("bot2 solto");
+            Serial.println("botam solto");
+            digitalWrite(ledam, LOW);
             flag2=1;
             break;
           }
@@ -83,8 +87,10 @@ int catch_single_button_press(){
       if(bot_vd_press){
         while(1){
           Serial.println("botvd pressionado");
+          digitalWrite(ledvd, HIGH);
           if(!bot_vd_press){
             Serial.println("botvd solto");
+            digitalWrite(ledvd, LOW);
             flag3=1;
             break;
           }
